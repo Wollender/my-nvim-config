@@ -3,7 +3,6 @@ vim.g.netrw_banner = 0					-- gets rid of the annoying banner for netrw
 vim.g.netrw_browse_split=4				-- open in prior window
 vim.g.netrw_altv = 1					-- change from left splitting to right splitting
 vim.g.netrw_liststyle=3					-- tree style view in netrw
---vim.cmd("let g:netrw_list_hide=netrw_gitignore#Hide()")
 vim.opt.title = true					-- show title
 vim.cmd('set path+=**')					-- search current directory recursively
 vim.opt.syntax = "ON"
@@ -37,52 +36,10 @@ vim.opt.completeopt= { "menuone", "noselect" }
 vim.opt.splitbelow = true				-- split go below
 vim.opt.splitright = true				-- vertical split to the right
 vim.opt.termguicolors = true			-- terminal gui colors
-vim.cmd('colorscheme personal')			-- set colorscheme
+vim.cmd('colorscheme desert')			-- set colorscheme
 vim.cmd('filetype plugin on')			-- set filetype 
 vim.cmd('set wildmenu')					-- enable wildmenu
-
---statusline
-vim.cmd "highlight StatusType guibg=#b16286 guifg=#1d2021"
-vim.cmd "highlight StatusFile guibg=#fabd2f guifg=#1d2021"
-vim.cmd "highlight StatusModified guibg=#1d2021 guifg=#d3869b"
-vim.cmd "highlight StatusBuffer guibg=#98971a guifg=#1d2021"
-vim.cmd "highlight StatusLocation guibg=#458588 guifg=#1d2021"
-vim.cmd "highlight StatusPercent guibg=#1d2021 guifg=#ebdbb2"
-vim.cmd "highlight StatusNorm guibg=none guifg=white"
-vim.o.statusline = " "
-				.. ""
-				.. " "
-				.. "%l"
-				.. " "
-				.. " %#StatusType#"
-				.. "<< "
-				.. "%Y" 
-				.. "  "
-				.. " >>"
-				.. "%#StatusFile#"
-				.. "<< "
-				.. "%F"
-				.. " >>"
-				.. "%#StatusModified#"
-				.. " "
-				.. "%m"
-				.. " "
-				.. "%#StatusNorm#"
-				.. "%="
-				.. "%#StatusBuffer#"
-				.. "<< "
-				.. "﬘ "
-				.. "%n"
-				.. " >>"
-				.. "%#StatusLocation#"
-				.. "<< "
-				.. "燐 "
-				.. "%l,%c"
-				.. " >>"
-				.. "%#StatusPercent#"
-				.. "<< "
-				.. "%p%%  "
-				.. " >> "
+vim.cmd('set cursorline')
 
 -- Functional wrapper for mapping custom keybindings
 function map(mode, lhs, rhs, opts)
