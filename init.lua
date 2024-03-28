@@ -39,13 +39,18 @@ vim.opt.history= 500
 vim.cmd('colorscheme desert')			-- set colorscheme
 vim.cmd('filetype plugin on')			-- set filetype 
 vim.cmd('filetype indent on')           -- set indent 
-vim.cmd('set wildmenu')					-- enable wildmenu
+vim.cmd('set wildmenu')					-- enable wildmenu dispaly all matching files when we tab complete
 vim.cmd('set cursorline')               -- highlight current line
 vim.cmd('set autoread')                 -- set auto update current file
 vim.cmd('set lazyredraw')               -- Don't redraw while executing macros (good performance config)
 vim.cmd('set path+=**')					-- search current directory recursively
 vim.cmd('set magic')
 vim.cmd('set smarttab')
+vim.cmd('set omnifunc=syntaxcomplete#Complete')        --Enable plugins and load plugin for the detected file type
+vim.cmd('set omnifunc=htmlcomplete#CompleteTags')      --omnifunc for html
+vim.cmd('set omnifunc=csscomplete#CompleteCSS')        --omnifunc for css
+vim.cmd('set omnifunc=javascriptcomplete#CompleteJS')  --omnifunc for js
+
 
 -- Functional wrapper for mapping custom keybindings
 function map(mode, lhs, rhs, opts)
@@ -122,3 +127,4 @@ map("n", "<leader>i", "iif [ @ ]; then <CR><CR> else <CR><CR> fi <ESC>/@ <CR>")
 
 -- html template
 map("n", "<leader>ht", "i<!DOCTYPE html><CR>	<html lang=\"en\"><CR>	<head><CR>	<meta charset=\"UTF-8\"><CR></head><CR> @ </html><ESC>/@ <CR>")
+
